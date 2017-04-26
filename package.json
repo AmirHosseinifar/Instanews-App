@@ -1,0 +1,26 @@
+{
+  "name": "instanews",
+  "version": "1.0.0",
+  "description": "new site",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AmirHosseinifar/Instanews-App.git"
+  },
+  "author": "Amir Hosseinifar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AmirHosseinifar/Instanews-App/issues"
+  },
+  "homepage": "https://github.com/AmirHosseinifar/Instanews-App#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^3.0.1",
+    "gulp-eslit": "^1.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.1.2"
+  }
+}
