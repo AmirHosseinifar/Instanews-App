@@ -1,26 +1,44 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link herf="style.css" type="text/css">
+    <link rel="stylesheet" href="build/css/style.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="utf-8">
     <title>
-
+      Instanews
     </title>
   </head>
 
   <body>
-    <p>choose a section:</p>
-    <form>
-      <div>
-       <select  id="#select">
+    <header class="container">
+      <div class="logo">
+        <img class="nyt-logo" src="build/images/nyt-logo.svg" alt= "NYT  Logo"/>
+      </div>
+     <form action="#" method="post" class="search">
+      <div class="dropdown">
+      <p>Choose a section:</p>
+       <select  id="select">
+         <option value="" disabled="disabled" selected="selected">Sections</option>
           <option value="home">Home</option>
           <option value="politics">politics</option>
           <option value="technology">Technology</option>
           <option value="arts">Arts</option>
           <option value="sports">Sports</option>
           <option value="science">Science</option>
-      </select>
-    </div>
+       </select>
+     </div>
+     </form>
+  </header>
+  <div class="loader">
+    <img src="build/images/ajax-loader.gif" alt="loading" class="loading">
+  </div>
+
+    <section class="news">
+    </section>
+  
+  <footer class="footer container">
+    <p><i class="fa fa-copyright"></i>Copyright 2016 Instanews</p>
+  </footer>
   <script src="lib/jquery-3.2.1.min.js"></script>
   <script src="build/js/main.min.js"></script>
   </body>

@@ -1,0 +1,16 @@
+html {
+  font-size: $base-font-size;
+}
+
+body{
+  background-color: #000;
+  color: $base-color;
+  font-family: 'open-sans';
+}
+*{
+  box-sizing: border-box;
+}
+
+.container{
+  width: 100%;
+}
