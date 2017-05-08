@@ -1,16 +1,34 @@
 html {
   font-size: $base-font-size;
+	height: 100%;
 }
 
-body{
+body {
   background-color: #000;
   color: $base-color;
-  font-family: 'open-sans';
-}
-*{
-  box-sizing: border-box;
+	font-family: $base-font-stack;
+	height: 100%;
 }
 
-.container{
-  width: 100%;
+em {
+	font-style: italic;
+}
+
+strong {
+	font-weight: bold;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.container {
+	position:relative;
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
 }

@@ -1,0 +1,16 @@
+footer {
+	text-align: center;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	color: $footer-color;
+	@include desktop {
+		text-align: left;
+		margin-left: 3rem;
+	}
+}
+
+
+.copyright span {
+	text-transform: uppercase;
+}
+

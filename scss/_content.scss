@@ -1,35 +1,83 @@
+.news-container {
+	margin-top: 30vh;
+	@include tablet {
+		margin-top: 10vh;
+	}
+}
+
 .news {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
-.story-part{
-  flex: 1 0 100%;
-  position: relative;
-  overflow: hidden;
-  height: 60vh;
-  @include tablet {
-    flex-basis: 33.3%;
-    height: 50vh;
-  }
-  @include tablet{
-    flex-basis: 33.3%;
-    height: 50vh;
-  }
+.news-cell {
+	flex: 1 0 100%;
+	position: relative;
+	overflow: hidden;
+	height: 60vh;
+	@include tablet {
+		flex-basis: 33.3%;
+		height: 50vh;
+	}
+	@include desktop {
+		flex-basis: 25%;
+	}
+	&:hover {
+		.abstract-container {
+			bottom: 0px;
+		}
+	}
 }
-@include desktop {
-  flex-basis: 25%;
+
+.news-image {
+	position: absolute;
+	width: 700px;
+	min-height: 100%;
+	left: -100px;
+	@include tablet {
+		left: -150px;
+	}
+}
+
+.abstract-container {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background: linear-gradient( 0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)) no-repeat;
+	padding: 0.5rem 0.5rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	transition: all 0.5s ease-in-out 0.1s;
+	@include desktop {
+		bottom: -150px;
+	}
+	&:hover {
+		padding-bottom: 1.5rem;
+		padding-top: 1rem;
+	}
 }
 
 
 
-.story-image{
-  position: absolute;
-  width: 700px;
-  min-height: 100%;
-  left: -100px;
-  @include tablet {
-    left: -150px;
-  }
+.abstract-container a, .abstract-container a:hover {
+	text-decoration: none;
+	color: $base-color;
+}
+
+.news-abstract {
+	color: $base-color;
+	text-decoration: none;
+}
+
+.loading {
+	width: 3rem;
+	height: auto;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.errormsg {
+	text-align: center;
 }

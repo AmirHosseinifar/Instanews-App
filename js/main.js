@@ -1,35 +1,42 @@
 $(function () {
+  function hideLoading() {
+    $('.loading').hide();
+  }
+  hideLoading();
+  $('#select').selectric();
 
-  $('#select').on('change', function (event) {
-    event.preventDefault();
-    var selected = this.value;
-    $(".news").empty();
+
+  $('#select').on('change', function() {
+    $('.header').addClass('to-top');
     $('.loading').show();
-    var story="";
-    var count=0;
-    var url = 'https://api.nytimes.com/svc/topstories/v2/'+selected+'.json';
-
+    $('.news').empty();
+    var storyString = '';
+    var runCount= 0;
+    var section = this.value;
+    var url = 'https://api.nytimes.com/svc/topstories/v2/'+ section + '.json';
     url += '?' + $.param({
-      'api-key': 'd84a476d118d4f00a74b79e6bf7001d7'
+  'api-key': 'd84a476d118d4f00a74b79e6bf7001d7'
     });
-
     $.ajax({
       url: url,
       method: 'GET'
-    }).done(function (data) {
-      
-      $.each(data.results, function(index, value){
-       if( value.multimedia.length >=5 && count<12 && value.multimedia[4].width >= 2048){story += '<div class=story-part>'<a href="'+ value.url +'" target="_blank"><img src="'+value.multimedia[4].url+'" class="story-image"><div class="abstract-container"><p class="story-abstract">'+value.abstract+'</p></div></a></div>';
-       count ++;
-}
-      });
-      $('.news').append(story)
+    }).done(function(data) {
+      hideLoading();
+      $.each(data.results, function(index, value) {
+        if (value.multimedia.length >= 5 && runCount < 12 && value.multimedia[4].width >= 2048) {
+        storyString += '<div class="news-cell"><a href="'+ value.url +'" target="_blank"><img src="'+value.multimedia[4].url+'" class="news-image"><div class="abstract-container"><p class="news-abstract">'+value.abstract+'</p></div></a></div>';
+        runCount++ ; 
+        }
 
-     }).fail(function (err) {
-      $('.news').append('<p>Sorry, nothing was found.</p>');
+      })
+      $('.news').append(storyString)
+    }).fail(function() {
+      hideLoading();
+      $('.news').append('<p class="errormsg">Sorry, something went wrong.</p>');
     });
+
+  });
 
   
 
-  });
 });
